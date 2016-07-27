@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="angular.js"></script>
+
+	<script>
+		var myModule = angular.module('myModule', []);
+
+		myModule.controller('x', function($scope) {
+			$scope.clickCounter = 0;
+			$scope.check = function() {
+				$scope.clickCounter++;
+			}
+		});
+
+	</script>
+</head>
+<body>
+
+	<div ng-controller="x">
+
+		<input type="checkbox" ng-model="model" ng-change="check()"/>
+		<input type="checkbox" ng-model="model">
+		<label>Works for second checkbox</label><br/>
+		<div>Checkboxes are checked = {{model}}</div>
+		<div>counter = {{clickCounter}}</div>
+
+
+	</div>
+
+
+</body>
+</html>
